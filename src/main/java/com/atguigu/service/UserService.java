@@ -2,31 +2,24 @@ package com.atguigu.service;
 
 import com.atguigu.pojo.User;
 
-/**
- * dys
- * 2023/2/6 9:21
- *
- * @version 1.0
- */
 public interface UserService {
     /**
      * 注册用户
-     *
      * @param user
      */
-    public void registerUser(User user);
+    public void registUser(User user);
 
     /**
      * 登录
      * @param user
-     * @return 返回null 登陆失败,返回有值登陆成功
+     * @return 如果返回null，说明登录失败，返回有值，是登录成功
      */
     public User login(User user);
 
     /**
-     * 判断用户名子是否存在
+     * 检查 用户名是否可用
      * @param username
-     * @return true:用户名存在   false:用户名不存在
+     * @return 返回true表示用户名已存在，返回false表示用户名可用
      */
     public boolean existsUsername(String username);
 }

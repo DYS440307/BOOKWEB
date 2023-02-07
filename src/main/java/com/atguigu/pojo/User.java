@@ -1,11 +1,5 @@
 package com.atguigu.pojo;
 
-/**
- * dys
- * 2023/2/5 21:22
- *
- * @version 1.0
- */
 public class User {
     private Integer id;
     private String username;
