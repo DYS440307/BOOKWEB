@@ -28,11 +28,7 @@
 			<h1>欢迎回来 <a href="index.jsp">转到主页</a></h1>
 	
 		</div>
-		
-		<div id="bottom">
-			<span>
-				尚硅谷书城.Copyright &copy;2015
-			</span>
-		</div>
+
+		<%@include file="/pages/common/foot.jsp" %>
 </body>
 </html>

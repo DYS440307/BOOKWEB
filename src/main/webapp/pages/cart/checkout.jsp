@@ -23,14 +23,9 @@
 	<div id="main">
 		
 		<h1>你的订单已结算，订单号为2937474382928484747</h1>
-		
-	
+
 	</div>
-	
-	<div id="bottom">
-		<span>
-			尚硅谷书城.Copyright &copy;2015
-		</span>
-	</div>
+
+	<%@include file="/pages/common/foot.jsp" %>
 </body>
 </html>

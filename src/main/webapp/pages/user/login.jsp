@@ -49,10 +49,7 @@
         </div>
     </div>
 </div>
-<div id="bottom">
-			<span>
-				尚硅谷书城.Copyright &copy;2015
-			</span>
-</div>
+<%--静态包含页脚--%>
+<%@include file="/pages/common/foot.jsp"%>
 </body>
 </html>
