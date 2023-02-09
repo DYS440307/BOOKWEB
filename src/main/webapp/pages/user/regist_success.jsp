@@ -5,9 +5,7 @@
 <meta charset="UTF-8">
 <title>铃铛书城注册页面</title>
 	<!--写base标签，永远固定相对路径跳转的结果-->
-	<base href="http://localhost:8080/book/">
-
-<link type="text/css" rel="stylesheet" href="static/css/style.css" >
+	<%@include file="/pages/common/head.jsp" %>
 <style type="text/css">
 	h1 {
 		text-align: center;
