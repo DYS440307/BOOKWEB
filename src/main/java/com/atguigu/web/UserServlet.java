@@ -72,7 +72,7 @@ public class UserServlet extends BaseServlet {
 //        User user = new User();
 //        WebUtils.copyParamToBean(req.getParameterMap(),user);
 //通过泛型省略转换
-        User user =  WebUtils.copyParamToBean(req.getParameterMap() , new User());
+        User user = WebUtils.copyParamToBean(req.getParameterMap() , new User());
 
 
 //        2、检查 验证码是否正确  === 写死,要求验证码为:abcde
