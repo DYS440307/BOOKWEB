@@ -117,7 +117,7 @@
                 </div>
                 <div class="form">
                     <form action="userServlet" method="post">
-<%--                        隐藏域回显判断--%>
+                        <%--                        隐藏域回显判断--%>
                         <input type="hidden" name="action" value="regist"/>
                         <label>用户名称：</label>
                         <input class="itxt" type="text" placeholder="请输入用户名"
