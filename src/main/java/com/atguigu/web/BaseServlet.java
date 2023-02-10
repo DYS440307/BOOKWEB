@@ -32,7 +32,7 @@ public abstract class BaseServlet extends HttpServlet {
             //调用目标业务方法
             method.invoke(this, req, resp);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
