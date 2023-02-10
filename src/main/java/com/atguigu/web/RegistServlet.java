@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@SuppressWarnings({"all"})
 public class RegistServlet extends HttpServlet {
 
     private UserService userService = new UserServiceImpl();
@@ -26,18 +27,27 @@ public class RegistServlet extends HttpServlet {
         if ("abcde".equalsIgnoreCase(code)) {
 //        3、检查 用户名是否可用
             if (userService.existsUsername(username)) {
+                //            回显数据
+                req.setAttribute("msg", "验证码错误");
+                req.setAttribute("username", username);
+                req.setAttribute("email", email);
                 System.out.println("用户名[" + username + "]已存在!");
+
 //        跳回注册页面
                 req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
             } else {
                 //      可用
-//                调用Sservice保存到数据库
+//                调用Service保存到数据库
                 userService.registUser(new User(null, username, password, email));
-//
 //        跳到注册成功页面 regist_success.jsp
                 req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
             }
         } else {
+//            回显数据
+            req.setAttribute("msg", "验证码错误");
+            req.setAttribute("username", username);
+            req.setAttribute("email", email);
+
             System.out.println("验证码[" + code + "]错误");
             req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
         }

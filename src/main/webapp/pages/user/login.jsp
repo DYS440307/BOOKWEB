@@ -27,13 +27,19 @@
                 </div>
                 <div class="msg_cont">
                     <b></b>
-                    <span class="errorMsg">请输入用户名和密码</span>
+                    <%--                    请输入用户名和密码--%>
+                    <span class="errorMsg">
+                        <%=request.getAttribute("msg") == null ? "请输入用户名字和密码" : request.getAttribute("msg")%>
+
+                    </span>
                 </div>
                 <div class="form">
                     <form action="loginServlet" method="post">
                         <label>用户名称：</label>
                         <input class="itxt" type="text" placeholder="请输入用户名"
-                               autocomplete="off" tabindex="1" name="username"/>
+                               autocomplete="off" tabindex="1" name="username"
+                               value="<%=request.getAttribute("username")==null?"":request.getAttribute("username")%>"
+                        />
                         <br/>
                         <br/>
                         <label>用户密码：</label>
@@ -50,6 +56,6 @@
     </div>
 </div>
 <%--静态包含页脚--%>
-<%@include file="/pages/common/foot.jsp"%>
+<%@include file="/pages/common/foot.jsp" %>
 </body>
 </html>
