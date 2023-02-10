@@ -30,7 +30,7 @@ class BookDaoTest {
 
     @Test
     void updateBook() {
-        bookDao.updateBook(new Book(21 , "大家都可以这么帅！" , "国哥" , new BigDecimal(9999) , 1100000 , 0 , null));
+        bookDao.updateBook(new Book(21 , "大家都可768以这么帅！" , "国哥" , new BigDecimal(9999) , 1100000 , 0 , null));
     }
 
     @Test
