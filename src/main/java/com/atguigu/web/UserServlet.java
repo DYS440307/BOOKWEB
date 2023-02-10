@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 /**
  * dys
@@ -96,14 +97,23 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
+/*      进化:用反射代替if
         if ("login".equals(action)) {
-//            System.out.println("处理登录的需求");
             login(req, resp);
         } else if ("regist".equals(action)) {
-//            System.out.println("处理注册的需求");
             regist(req, resp);
 
+        }*/
+        String action = req.getParameter("action");
+        try {
+            //获取action.业务鉴别字符串，获取相应的业务方法反射对象
+//            Method method = UserServletTest.class.getDeclaredMethod(action);
+            Method method = this.getClass().getDeclaredMethod(action, HttpServletRequest.class, HttpServletResponse.class);
+            System.out.println(method);
+            //调用目标业务方法
+            method.invoke(this,req,resp);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }
