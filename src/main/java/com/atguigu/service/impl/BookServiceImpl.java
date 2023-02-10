@@ -7,13 +7,8 @@ import com.atguigu.service.BookService;
 
 import java.util.List;
 
-/**
- * dys
- * 2023/2/10 20:52
- *
- * @version 1.0
- */
 public class BookServiceImpl implements BookService {
+
     private BookDao bookDao = new BookDaoImpl();
 
     @Override
@@ -22,14 +17,13 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void deleteBook(Integer id) {
+    public void deleteBookById(Integer id) {
         bookDao.deleteBookById(id);
     }
 
     @Override
     public void updateBook(Book book) {
         bookDao.updateBook(book);
-
     }
 
     @Override

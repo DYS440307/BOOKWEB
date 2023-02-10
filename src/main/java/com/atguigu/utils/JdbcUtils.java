@@ -21,13 +21,12 @@ public class JdbcUtils {
             properties.load(inputStream);
             // 创建 数据库连接 池
             dataSource = (DruidDataSource) DruidDataSourceFactory.createDataSource(properties);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
-
-
 
     /**
      * 获取数据库连接池中的连接

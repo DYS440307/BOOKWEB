@@ -1,32 +1,42 @@
 package com.atguigu.utils;
 
-import com.atguigu.pojo.User;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.util.Map;
 
-/**
- * dys
- * 2023/2/10 13:19
- *
- * @version 1.0
- */
 public class WebUtils {
-    public static <T> T copyParamToBean(Map value , T bean) {
+    /**
+     * 把Map中的值注入到对应的JavaBean属性中。
+     * @param value
+     * @param bean
+     */
+    public static <T> T copyParamToBean( Map value , T bean ){
         try {
-//            User user = new User();
-            System.out.println("注入之前" + bean);
-
+            System.out.println("注入之前：" + bean);
             /**
-             * 把所有的请求参数都注入javaBean对象中
+             * 把所有请求的参数都注入到user对象中
              */
-            BeanUtils.populate(bean , value);
-            System.out.println("注入之后" + bean);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+            BeanUtils.populate(bean, value);
+            System.out.println("注入之后：" + bean);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return bean;
     }
+
+    /**
+     * 将字符串转换成为int类型的数据
+     * @param strInt
+     * @param defaultValue
+     * @return
+     */
+    public static int parseInt(String strInt,int defaultValue) {
+        try {
+            return Integer.parseInt(strInt);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return defaultValue;
+    }
+
 }
