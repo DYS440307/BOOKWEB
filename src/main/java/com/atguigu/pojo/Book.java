@@ -2,35 +2,30 @@ package com.atguigu.pojo;
 
 import java.math.BigDecimal;
 
-/**
- * dys
- * 2023/2/10 15:48
- *
- * @version 1.0
- */
 public class Book {
-    private Integer    id;
-    private String     name;
-    private String     author;
+    private Integer id;
+    private String name;
+    private String author;
     private BigDecimal price;
-    private Integer    sales;
-    private Integer    stock;
-    private String     imgPath = "static/img/default.ipg";
+    private Integer sales;
+    private Integer stock;
+    private String imgPath = "static/img/default.jpg";
 
     public Book() {
     }
 
-    public Book(Integer id , String name , String author , BigDecimal price , Integer sales , Integer stock , String imgPath) {
-        this.id     = id;
-        this.name   = name;
+    public Book(Integer id, String name, String author, BigDecimal price, Integer sales, Integer stock, String imgPath) {
+        this.id = id;
+        this.name = name;
         this.author = author;
-        this.price  = price;
-        this.sales  = sales;
-        this.stock  = stock;
-        //要求给定的图片封面图片不能为空
-        if (imgPath != null && ! "".equals(imgPath)) {
+        this.price = price;
+        this.sales = sales;
+        this.stock = stock;
+        // 要求给定的图书封面图书路径不能为空
+        if (imgPath != null && !"".equals(imgPath)) {
             this.imgPath = imgPath;
         }
+
     }
 
     public Integer getId() {
@@ -86,13 +81,23 @@ public class Book {
     }
 
     public void setImgPath(String imgPath) {
-        if (imgPath != null && ! "".equals(imgPath)) {
+        // 要求给定的图书封面图书路径不能为空
+        if (imgPath != null && !"".equals(imgPath)) {
             this.imgPath = imgPath;
         }
     }
 
+
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", name='" + name + '\'' + ", author='" + author + '\'' + ", price=" + price + ", sales=" + sales + ", stock=" + stock + ", imgPath='" + imgPath + '\'' + '}';
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                ", sales=" + sales +
+                ", stock=" + stock +
+                ", imgPath='" + imgPath + '\'' +
+                '}';
     }
 }
