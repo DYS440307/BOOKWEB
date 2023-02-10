@@ -3,10 +3,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>铃铛书城注册页面</title>
-	<!--写base标签，永远固定相对路径跳转的结果-->
-	<%@include file="/pages/common/head.jsp" %>
-<style type="text/css">
+<title>尚硅谷会员注册页面</title>
+
+	<%-- 静态包含 base标签、css样式、jQuery文件 --%>
+	<%@ include file="/pages/common/head.jsp"%>
+
+
+	<style type="text/css">
 	h1 {
 		text-align: center;
 		margin-top: 200px;
@@ -21,14 +24,11 @@
 		<div id="header">
 				<img class="logo_img" alt="" src="static/img/logo.gif" >
 				<span class="wel_word"></span>
-<%--			静态包含登陆成功的菜单--%>
-			<%@include file="/pages/common/login_success_menu.jsp"%>
-		<%--		<div>
-					<span>欢迎<span class="um_span">韩总</span>光临铃铛书城</span>
-					<a href="../order/order.jsp">我的订单</a>
-					<a href="../../index.jsp">注销</a>&nbsp;&nbsp;
-					<a href="../../index.jsp">返回</a>
-				</div>--%>
+
+			<%--静态包含，登录 成功之后的菜单 --%>
+			<%@ include file="/pages/common/login_success_menu.jsp"%>
+
+
 		</div>
 		
 		<div id="main">
@@ -37,6 +37,10 @@
 	
 		</div>
 
-		<%@include file="/pages/common/foot.jsp" %>
+
+		<%--静态包含页脚内容--%>
+		<%@include file="/pages/common/footer.jsp"%>
+
+
 </body>
 </html>
