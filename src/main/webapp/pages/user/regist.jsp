@@ -110,7 +110,8 @@
                 <div class="tit">
                     <h1>注册铃铛书城会员</h1>
                     <span class="errorMsg">
-                        <%=request.getAttribute("msg") == null ? "" : request.getAttribute("msg")%>
+<%--                        <%=request.getAttribute("msg") == null ? "" : request.getAttribute("msg")%>--%>
+                        ${requestScope.msg}
 
                     </span>
                 </div>
@@ -120,7 +121,7 @@
                         <input type="hidden" name="action" value="regist"/>
                         <label>用户名称：</label>
                         <input class="itxt" type="text" placeholder="请输入用户名"
-                               value="<%=request.getAttribute("username")==null?"":request.getAttribute("username")%>"
+                               value="${requestScope.username}"
                                autocomplete="off" tabindex="1" name="username" id="username"/>
                         <br/>
                         <br/>
@@ -136,7 +137,7 @@
                         <br/>
                         <label>电子邮件：</label>
                         <input class="itxt" type="text" placeholder="请输入邮箱地址"
-                               value="<%=request.getAttribute("email")==null?"":request.getAttribute("email")%>"
+                               value="${requestScope.email}"
                                autocomplete="off" tabindex="1" name="email" id="email"/>
                         <br/>
                         <br/>
